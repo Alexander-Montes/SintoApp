@@ -7,27 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ReporteSintomas extends AppCompatActivity {
+public class ModuloEstudiante extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reporte_sintomas);
+        setContentView(R.layout.activity_modulo_estudiante);
+        Button btnHistorialE = findViewById(R.id.btnHistorialE);
+        Button btnSintomasE = findViewById(R.id.btnSintomasE);
 
-        Button btnEnviar = findViewById(R.id.btnEnviar);
-        Button btnOmitir = findViewById(R.id.btnOmitir);
-
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        btnHistorialE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ReporteSintomas.this,ModuloProfesor.class);
+                Intent intent = new Intent(ModuloEstudiante.this, HistorialEstudiante.class);
                 startActivity(intent);
             }
         });
-        btnOmitir.setOnClickListener(new View.OnClickListener() {
+
+        btnSintomasE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ReporteSintomas.this,ModuloEstudiante.class);
+                Intent intent = new Intent(ModuloEstudiante.this, ReporteSintomas.class);
                 startActivity(intent);
             }
         });

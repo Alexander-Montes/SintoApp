@@ -5,22 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".HistorialProfesor">
+    tools:context=".HistorialEstudiante">
 
     <LinearLayout
-        android:id="@+id/layoutTituloHistorialP"
+        android:id="@+id/layoutTituloHistorialE"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/bg_color_gradient"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtTituloHistorialP"
+        android:id="@+id/txtTituloHistorialE"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
@@ -30,18 +31,20 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloHistorialP"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloHistorialE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="541dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVolverP"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTituloHistorialP"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTituloHistorialE"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -51,14 +54,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtFechaP1"
+                android:id="@+id/txtFechaE1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="serif"
-                android:text="20/11/2022"
+                android:text="23/11/2022"
                 android:textAlignment="viewStart"
                 android:textColor="#000000"
                 android:textSize="16sp"
@@ -68,14 +71,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
 
             <TextView
-                android:id="@+id/txtRespuestasP1"
+                android:id="@+id/txtRespuestasE1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="serif"
-                android:text="1. Si    2. No    3. No    4. No    5. No"
+                android:text="1. Si    2. Si    3. Si    4. Si    5. No"
                 android:textAlignment="viewStart"
                 android:textColor="#000000"
                 android:textSize="16sp"
@@ -85,121 +88,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
 
             <TextView
-                android:id="@+id/txtREstadoP1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="Habilitado"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <View
-                android:id="@+id/divider1"
-                android:layout_width="0dp"
-                android:layout_height="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/txtFechaP2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="21/11/2022"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <TextView
-                android:id="@+id/txtRespuestasP2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="1. Si    2. No    3. Si    4. No    5. No"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <TextView
-                android:id="@+id/txtREstadoP2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="Habilitado"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="0dp"
-                android:layout_height="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <TextView
-                android:id="@+id/txtFechaP3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="22/11/2022"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <TextView
-                android:id="@+id/txtRespuestasP3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="serif"
-                android:text="1. Si    2. Si    3. Si    4. No    5. No"
-                android:textAlignment="viewStart"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
-
-            <TextView
-                android:id="@+id/txtREstadoP3"
+                android:id="@+id/txtREstadoE1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -215,17 +104,132 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
 
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/txtFechaE2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="24/11/2022"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <TextView
+                android:id="@+id/txtRespuestasE2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="1. Si    2. Si    3. Si    4. Si    5. Si"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <TextView
+                android:id="@+id/txtREstadoE2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="No habilitado"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/txtFechaE3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="25/11/2022"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <TextView
+                android:id="@+id/txtRespuestasE3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="1. No    2. Si    3. Si    4. No    5. No"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <TextView
+                android:id="@+id/txtREstadoE3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif"
+                android:text="Habilitado"
+                android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/btnVolverP"
+        android:id="@+id/btnVolverE"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:background="@drawable/bg_btn_gradient"
         android:fontFamily="serif"
+        android:onClick="btnVolverE"
         android:text="@string/volver"
         android:textAllCaps="false"
         android:textColor="#000000"

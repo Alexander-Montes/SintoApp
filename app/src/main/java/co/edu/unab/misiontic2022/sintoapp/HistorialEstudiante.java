@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HistorialProfesor extends AppCompatActivity {
+public class HistorialEstudiante extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historial_profesor);
-        Button btnVolverP = findViewById(R.id.btnVolverP);
+        setContentView(R.layout.activity_historial_estudiante);
+        Button btnVolverE = findViewById(R.id.btnVolverE);
 
-        btnVolverP.setOnClickListener(new View.OnClickListener() {
+        btnVolverE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
