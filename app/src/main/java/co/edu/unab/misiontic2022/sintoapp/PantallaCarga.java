@@ -13,7 +13,7 @@ public class PantallaCarga extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = new Intent(PantallaCarga.this, MainActivity.class);
+        Intent intent = new Intent(PantallaCarga.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

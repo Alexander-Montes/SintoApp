@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
-import java.util.ArrayList;
-
-import co.edu.unab.misiontic2022.sintoapp.entity.Cursos;
 
 public class ModuloProfesor extends AppCompatActivity {
     Spinner listaVerCursos;
@@ -21,6 +18,7 @@ public class ModuloProfesor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modulo_profesor);
+
         listaVerCursos = findViewById(R.id.listaVerCursos);
         Button btnHistorialP = findViewById(R.id.btnHistorialP);
         Button btnSintomasP = findViewById(R.id.btnSintomasP);
@@ -41,14 +39,9 @@ public class ModuloProfesor extends AppCompatActivity {
             }
         });
 
-        ArrayList<Cursos> cursos = new ArrayList<>();
-        cursos.add(new Cursos("Ver cursos"));
-        cursos.add(new Cursos("Grupo 43"));
-        cursos.add(new Cursos("Grupo 106"));
-
-        ArrayAdapter<Cursos> adapter = new ArrayAdapter<>(this,
-                com.google.android.material.R.layout
-                .support_simple_spinner_dropdown_item, cursos);
+        String [] cursos = new String[]{"Ver cursos","Grupo 43", "Grupo 106"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                ModuloProfesor.this,android.R.layout.simple_spinner_dropdown_item, cursos);
         listaVerCursos.setAdapter(adapter);
 
         listaVerCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
