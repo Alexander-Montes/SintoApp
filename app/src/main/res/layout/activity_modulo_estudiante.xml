@@ -72,10 +72,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="serif"
-        android:text="Andres Mauricio Alarcon"
+        android:text="Nombres"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -85,21 +85,38 @@
         app:layout_constraintTop_toBottomOf="@+id/imgEstudiante" />
 
     <TextView
-        android:id="@+id/txtProgramaE"
+        android:id="@+id/txtApellidoE"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="serif"
+        android:text="Apellidos"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreE" />
+
+    <TextView
+        android:id="@+id/txtPrograma"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="serif"
-        android:text="Desarrollo Movil"
+        android:text="Programa"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreE" />
+        app:layout_constraintTop_toBottomOf="@+id/txtApellidoE" />
 
     <TextView
         android:id="@+id/txtEstadoE"
@@ -109,13 +126,13 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="serif"
-        android:text="Estado: No Habilitado"
+        android:text="Estado"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProgramaE" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPrograma" />
 
     <TextView
         android:id="@+id/txtPresentarSintomasE"

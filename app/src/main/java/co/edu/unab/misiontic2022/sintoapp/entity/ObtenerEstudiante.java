@@ -1,12 +1,13 @@
 package co.edu.unab.misiontic2022.sintoapp.entity;
 
-public class ObtenerDocente {
+public class ObtenerEstudiante {
     private int id;
     private int user_id;
     private String nombres;
     private String apellidos;
-    private String profesion;
-    private  int estado;
+    private String programa;
+    private int estado;
+    private int curso_id;
 
     public int getId() {
         return id;
@@ -40,12 +41,12 @@ public class ObtenerDocente {
         this.apellidos = apellidos;
     }
 
-    public String getProfesion() {
-        return profesion;
+    public String getPrograma() {
+        return programa;
     }
 
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
+    public void setPrograma(String programa) {
+        this.programa = programa;
     }
 
     public int getEstado() {
@@ -56,15 +57,24 @@ public class ObtenerDocente {
         this.estado = estado;
     }
 
+    public int getCurso_id() {
+        return curso_id;
+    }
+
+    public void setCurso_id(int curso_id) {
+        this.curso_id = curso_id;
+    }
+
     @Override
     public String toString() {
-        return "ObtenerDocente{" +
+        return "ObtenerEstudiante{" +
                 "id=" + id +
                 ", user_id=" + user_id +
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", profesion='" + profesion + '\'' +
+                ", programa='" + programa + '\'' +
                 ", estado=" + estado +
+                ", curso_id=" + curso_id +
                 '}';
     }
 }

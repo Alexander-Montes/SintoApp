@@ -1,6 +1,8 @@
 package co.edu.unab.misiontic2022.sintoapp.entity;
 
-public class Reporte {
+import java.io.Serializable;
+
+public class ObtenerReportes {
     private int id;
     private long usuario_id;
     private String fecha;
