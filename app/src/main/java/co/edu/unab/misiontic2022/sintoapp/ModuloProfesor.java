@@ -4,15 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import co.edu.unab.misiontic2022.sintoapp.adapters.HistorialAdapter;
 import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerDocente;
+import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerReportes;
 import co.edu.unab.misiontic2022.sintoapp.entity.Token;
 import co.edu.unab.misiontic2022.sintoapp.network.LoginAPICliente;
 import co.edu.unab.misiontic2022.sintoapp.network.LoginAPIService;
@@ -26,10 +33,12 @@ public class ModuloProfesor extends AppCompatActivity {
     Button btnSintomasP;
     private LoginAPIService service;
     private long user_id;
+    private long usuario_id;
     private TextView txtNombreP;
     private TextView txtApellidoP;
     private TextView txtProfesion;
     private TextView txtEstadoP;
+    private ListView listaHistorialP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,7 @@ public class ModuloProfesor extends AppCompatActivity {
         setContentView(R.layout.activity_modulo_profesor);
         service = LoginAPICliente.getLoginAPIService();
         user_id = getIntent().getIntExtra("usuario_id", -1);
+        usuario_id = getIntent().getIntExtra("usuario_id", -1);
         setup();
     }
 
@@ -48,6 +58,7 @@ public class ModuloProfesor extends AppCompatActivity {
         txtApellidoP = findViewById(R.id.txtApellidoP);
         txtProfesion = findViewById(R.id.txtProfesion);
         txtEstadoP = findViewById(R.id.txtEstadoP);
+        listaHistorialP = findViewById(R.id.listaHistorialP);
 
         String[] cursos = new String[]{"Ver cursos", "Grupo 43", "Grupo 106"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -73,9 +84,28 @@ public class ModuloProfesor extends AppCompatActivity {
     }
 
     public void btnHistorialP (View view) {
-        Intent intent = new Intent(ModuloProfesor.this, HistorialProfesor.class);
-        startActivity(intent);
+        service.obtenerHistorial("Bearer "+ Token.token, usuario_id).enqueue(new Callback<List<ObtenerReportes>>() {
+            @Override
+            public void onResponse(Call<List<ObtenerReportes>> call, Response<List<ObtenerReportes>> response) {
+                List<ObtenerReportes> reportes = response.body();
+                Log.d("PRUEBA EN PROFESOR", String.valueOf(reportes));
+                //datos(reportes);
+                Intent intent = new Intent(ModuloProfesor.this, HistorialProfesor.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(Call<List<ObtenerReportes>> call, Throwable t) {
+                Toast.makeText(ModuloProfesor.this,
+                        "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+    /*private void datos(List<ObtenerReportes> reportes) {
+        HistorialAdapter adapter = new HistorialAdapter (ModuloProfesor.this, android.R.layout.simple_list_item_1, reportes);
+        listaHistorialP.setAdapter(adapter);
+    }*/
 
     public void btnSintomasP (View view) {
         Intent intent = new Intent(ModuloProfesor.this, ReporteSintomas.class);

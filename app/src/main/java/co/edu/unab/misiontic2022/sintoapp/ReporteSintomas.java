@@ -8,28 +8,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class ReporteSintomas extends AppCompatActivity {
+    Button btnEnviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte_sintomas);
+        update();
+    }
 
-        Button btnEnviar = findViewById(R.id.btnEnviar);
-        Button btnOmitir = findViewById(R.id.btnOmitir);
+    private void update(){
+        btnEnviar = findViewById(R.id.btnEnviar);
+    }
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReporteSintomas.this,ModuloProfesor.class);
-                startActivity(intent);
-            }
-        });
-        btnOmitir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReporteSintomas.this,ModuloEstudiante.class);
-                startActivity(intent);
-            }
-        });
+    public void btnEnviar(View view){
+        Intent intent = new Intent(ReporteSintomas.this,ModuloProfesor.class);
+        startActivity(intent);
     }
 }

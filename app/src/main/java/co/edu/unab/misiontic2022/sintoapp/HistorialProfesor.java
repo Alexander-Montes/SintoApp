@@ -47,7 +47,7 @@ public class HistorialProfesor extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<ObtenerReportes>> call, Response<List<ObtenerReportes>> response) {
                 List<ObtenerReportes> reportes = response.body();
-                Log.d("PRUEBA", String.valueOf(reportes));
+                Log.d("PRUEBA EN HISTORIAL", String.valueOf(reportes));
             }
 
             @Override
