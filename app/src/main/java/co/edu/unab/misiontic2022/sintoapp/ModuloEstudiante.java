@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerEstudiante;
 import co.edu.unab.misiontic2022.sintoapp.entity.Token;
-import co.edu.unab.misiontic2022.sintoapp.network.LoginAPICliente;
-import co.edu.unab.misiontic2022.sintoapp.network.LoginAPIService;
+import co.edu.unab.misiontic2022.sintoapp.network.APICliente;
+import co.edu.unab.misiontic2022.sintoapp.network.APIService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,8 +20,9 @@ import retrofit2.Response;
 public class ModuloEstudiante extends AppCompatActivity {
     Button btnHistorialE;
     Button btnSintomasE;
-    private LoginAPIService service;
-    private long user_id;
+    private APIService service;
+    private int user_id;
+    private int usuario_id;
     private TextView txtNombreE;
     private TextView txtApellidoE;
     private TextView txtPrograma;
@@ -31,8 +32,9 @@ public class ModuloEstudiante extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modulo_estudiante);
-        service = LoginAPICliente.getLoginAPIService();
+        service = APICliente.getAPIService();
         user_id = getIntent().getIntExtra("usuario_id", -1);
+        usuario_id = getIntent().getIntExtra("usuario_id",-1);
         setup();
     }
     private void setup(){
@@ -46,6 +48,7 @@ public class ModuloEstudiante extends AppCompatActivity {
 
     public void btnHistorialE(View view){
         Intent intent = new Intent(ModuloEstudiante.this, HistorialEstudiante.class);
+        intent.putExtra("usuario_id", usuario_id);
         startActivity(intent);
     }
 
@@ -77,9 +80,9 @@ public class ModuloEstudiante extends AppCompatActivity {
         txtApellidoE.setText(String.valueOf(obestudiante.getApellidos()));
         txtPrograma.setText(String.valueOf(obestudiante.getPrograma()));
         if ((obestudiante.getEstado()) == 0){
-            txtEstadoE.setText(String.valueOf("Estado: No habilitado"));
+            txtEstadoE.setText(String.valueOf("No habilitado"));
         } else {
-            txtEstadoE.setText(String.valueOf("Estado: Habilitado"));
+            txtEstadoE.setText(String.valueOf("Habilitado"));
         }
     }
 }

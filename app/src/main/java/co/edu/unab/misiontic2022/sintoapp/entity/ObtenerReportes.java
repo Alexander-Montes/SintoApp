@@ -1,10 +1,8 @@
 package co.edu.unab.misiontic2022.sintoapp.entity;
 
-import java.io.Serializable;
-
 public class ObtenerReportes {
     private int id;
-    private long usuario_id;
+    private int usuario_id;
     private String fecha;
     private int p1;
     private int p2;
@@ -21,11 +19,11 @@ public class ObtenerReportes {
         this.id = id;
     }
 
-    public long getUsuario_id() {
+    public int getUsuario_id() {
         return usuario_id;
     }
 
-    public void setUsuario_id(long usuario_id) {
+    public void setUsuario_id(int usuario_id) {
         this.usuario_id = usuario_id;
     }
 
@@ -87,7 +85,7 @@ public class ObtenerReportes {
 
     @Override
     public String toString() {
-        return "Reporte{" +
+        return "ObtenerReportes{" +
                 "id=" + id +
                 ", usuario_id=" + usuario_id +
                 ", fecha='" + fecha + '\'' +

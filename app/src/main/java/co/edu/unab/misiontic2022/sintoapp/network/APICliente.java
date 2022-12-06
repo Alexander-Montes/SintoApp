@@ -3,17 +3,17 @@ package co.edu.unab.misiontic2022.sintoapp.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginAPICliente {
+public class APICliente {
     private static final String URL = "https://servicio.miproyecto.xyz/api/";
-    private static LoginAPIService instance;
+    private static APIService instance;
 
-    public static LoginAPIService getLoginAPIService(){
+    public static APIService getAPIService(){
         if (instance == null){
-            Retrofit httpd = new Retrofit.Builder()
+            Retrofit httpp = new Retrofit.Builder()
                     .baseUrl(URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            instance = httpd.create(LoginAPIService.class);
+            instance = httpp.create(APIService.class);
         }
         return instance;
     }

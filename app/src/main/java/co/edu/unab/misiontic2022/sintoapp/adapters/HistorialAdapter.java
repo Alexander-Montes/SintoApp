@@ -7,16 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import co.edu.unab.misiontic2022.sintoapp.R;
 import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerReportes;
 
 public class HistorialAdapter extends BaseAdapter {
-    private ArrayList<ObtenerReportes> reportes;
+    private List<ObtenerReportes> reportes;
     private Context context;
 
-    public HistorialAdapter(Context context, ArrayList<ObtenerReportes> reportes) {
+    public HistorialAdapter(Context context, List<ObtenerReportes> reportes) {
         this.context=context;
         this.reportes = reportes;
     }
@@ -52,12 +52,13 @@ public class HistorialAdapter extends BaseAdapter {
         TextView txtREstado = convertView.findViewById(R.id.txtREstado);
 
         txtFecha.setText(reporte.getFecha());
-        txtR1.setText(reporte.getP1());
-        txtR2.setText(reporte.getP2());
-        txtR3.setText(reporte.getP3());
-        txtR4.setText(reporte.getP4());
-        txtR5.setText(reporte.getP5());
-        txtREstado.setText(reporte.getEstado());
+        txtR1.setText("" + reporte.getP1());
+        txtR2.setText("" + reporte.getP2());
+        txtR3.setText("" + reporte.getP3());
+        txtR4.setText("" + reporte.getP4());
+        txtR5.setText("" + reporte.getP5());
+        txtREstado.setText(String.valueOf(reporte.getEstado()));
+        //{String.valueOf() == "" + }
 
         return convertView;
     }

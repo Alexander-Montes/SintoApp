@@ -11,14 +11,14 @@ import android.widget.Toast;
 
 import co.edu.unab.misiontic2022.sintoapp.entity.Token;
 import co.edu.unab.misiontic2022.sintoapp.entity.RespuestaLogin;
-import co.edu.unab.misiontic2022.sintoapp.network.LoginAPICliente;
-import co.edu.unab.misiontic2022.sintoapp.network.LoginAPIService;
+import co.edu.unab.misiontic2022.sintoapp.network.APICliente;
+import co.edu.unab.misiontic2022.sintoapp.network.APIService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    private LoginAPIService service;
+    private APIService service;
     private EditText txtEmail;
     private EditText txtPass;
 
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        service = LoginAPICliente.getLoginAPIService();
+        service = APICliente.getAPIService();
         setup();
     }
 
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<RespuestaLogin> call, Throwable t) {
-                    Toast.makeText(LoginActivity.this, "Error="+t.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

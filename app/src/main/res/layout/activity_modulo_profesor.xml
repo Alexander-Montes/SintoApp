@@ -166,36 +166,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPresentarSintomasP" />
 
-    <TextView
-        android:id="@+id/txtCursos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="serif"
-        android:text="Cursos asignados:"
-        android:textAlignment="textStart"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSintomasP" />
-
-    <Spinner
-        android:id="@+id/listaVerCursos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="@color/rojiso"
-        android:spinnerMode="dialog"
+    <ImageButton
+        android:id="@+id/btnCursos"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bg_btn"
+        android:onClick="btnCursos"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCursos"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSintomasP"
+        app:srcCompat="@drawable/ver_cursos"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

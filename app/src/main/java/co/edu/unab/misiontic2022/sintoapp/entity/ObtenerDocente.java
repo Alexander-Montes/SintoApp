@@ -6,7 +6,7 @@ public class ObtenerDocente {
     private String nombres;
     private String apellidos;
     private String profesion;
-    private  int estado;
+    private int estado;
 
     public int getId() {
         return id;
