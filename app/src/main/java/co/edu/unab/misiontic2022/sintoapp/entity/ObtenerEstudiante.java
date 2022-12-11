@@ -8,6 +8,7 @@ public class ObtenerEstudiante {
     private String programa;
     private int estado;
     private int curso_id;
+    private String url_foto;
 
     public int getId() {
         return id;
@@ -65,6 +66,14 @@ public class ObtenerEstudiante {
         this.curso_id = curso_id;
     }
 
+    public String getUrl_foto() {
+        return url_foto;
+    }
+
+    public void setUrl_foto(String url_foto) {
+        this.url_foto = url_foto;
+    }
+
     @Override
     public String toString() {
         return "ObtenerEstudiante{" +
@@ -74,7 +83,8 @@ public class ObtenerEstudiante {
                 ", apellidos='" + apellidos + '\'' +
                 ", programa='" + programa + '\'' +
                 ", estado=" + estado +
-                ", curso_id=" + curso_id +
+                ", curso_id=" + curso_id + '\'' +
+                ", url_foto=" + url_foto +
                 '}';
     }
 }

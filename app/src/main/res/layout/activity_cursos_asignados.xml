@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaEstudiantes">
+    android:background="#FFFFFF"
+    tools:context=".CursosAsignados">
 
     <LinearLayout
-        android:id="@+id/layoutTituloListaE"
+        android:id="@+id/layoutTituloCursos"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/bg_color_gradient"
@@ -20,31 +21,40 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtTituloListaE"
+        android:id="@+id/txtTituloCursos"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:fontFamily="serif"
-        android:text="Lista Estudiantes"
+        android:text="Cursos asignados"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloListaE"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloCursos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.46" />
 
+    <ListView
+        android:id="@+id/listaCursos"
+        android:layout_width="409dp"
+        android:layout_height="541dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverCursos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTituloCursos" />
+
     <Button
-        android:id="@+id/btnVolverLista"
+        android:id="@+id/btnVolverCursos"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:layout_weight="1"
         android:background="@drawable/bg_btn_gradient"
         android:fontFamily="serif"
-        android:onClick="btnVolverLista"
+        android:onClick="btnVolverCursos"
         android:text="@string/volver"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -55,13 +65,4 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ListView
-        android:id="@+id/listaEstudiantes"
-        android:layout_width="409dp"
-        android:layout_height="541dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVolverLista"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTituloListaE" />
 </androidx.constraintlayout.widget.ConstraintLayout>

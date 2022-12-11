@@ -69,8 +69,7 @@ public class ModuloEstudiante extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ObtenerEstudiante> call, Throwable t) {
-                Toast.makeText(ModuloEstudiante.this,
-                        "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ModuloEstudiante.this,"Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

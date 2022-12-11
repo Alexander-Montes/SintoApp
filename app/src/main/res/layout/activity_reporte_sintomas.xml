@@ -8,7 +8,7 @@
     tools:context=".ReporteSintomas">
 
     <LinearLayout
-        android:id="@+id/layoutTituloProfesor"
+        android:id="@+id/layoutTituloReporte"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@drawable/bg_color_gradient"
@@ -30,7 +30,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloProfesor"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutTituloReporte"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTituloProfesor" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutTituloReporte" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"

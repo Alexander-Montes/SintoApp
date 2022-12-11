@@ -3,7 +3,6 @@ package co.edu.unab.misiontic2022.sintoapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -52,8 +51,7 @@ public class HistorialEstudiante extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ObtenerReportes>> call, Throwable t) {
-                Toast.makeText(HistorialEstudiante.this,
-                        "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HistorialEstudiante.this,"Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,13 +1,15 @@
 package co.edu.unab.misiontic2022.sintoapp.entity;
 
-public class ObtenerDocente {
+public class ObtenerLista {
     private int id;
     private int user_id;
+    private int documento;
     private String nombres;
     private String apellidos;
-    private String profesion;
+    private String programa;
     private int estado;
     private String url_foto;
+    private int curso_id;
 
     public int getId() {
         return id;
@@ -23,6 +25,14 @@ public class ObtenerDocente {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public int getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(int documento) {
+        this.documento = documento;
     }
 
     public String getNombres() {
@@ -41,12 +51,12 @@ public class ObtenerDocente {
         this.apellidos = apellidos;
     }
 
-    public String getProfesion() {
-        return profesion;
+    public String getPrograma() {
+        return programa;
     }
 
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
+    public void setPrograma(String programa) {
+        this.programa = programa;
     }
 
     public int getEstado() {
@@ -65,16 +75,26 @@ public class ObtenerDocente {
         this.url_foto = url_foto;
     }
 
+    public int getCurso_id() {
+        return curso_id;
+    }
+
+    public void setCurso_id(int curso_id) {
+        this.curso_id = curso_id;
+    }
+
     @Override
     public String toString() {
-        return "ObtenerDocente{" +
+        return "ObtenerLista{" +
                 "id=" + id +
                 ", user_id=" + user_id +
+                ", documento=" + documento +
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", profesion='" + profesion + '\'' +
-                ", estado=" + estado + '\'' +
-                ", url_foto=" + url_foto +
+                ", programa='" + programa + '\'' +
+                ", estado=" + estado +
+                ", url_foto='" + url_foto + '\'' +
+                ", curso_id=" + curso_id +
                 '}';
     }
 }

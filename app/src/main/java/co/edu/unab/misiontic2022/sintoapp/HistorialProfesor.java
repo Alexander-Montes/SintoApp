@@ -3,11 +3,9 @@ package co.edu.unab.misiontic2022.sintoapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -26,13 +24,6 @@ public class HistorialProfesor extends AppCompatActivity {
     private APIService service;
     private int usuario_id;
     private ListView listaHistorialP;
-    private TextView txtFecha;
-    private TextView txtR1;
-    private TextView txtR2;
-    private TextView txtR3;
-    private TextView txtR4;
-    private TextView txtR5;
-    private TextView txtREstado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +37,6 @@ public class HistorialProfesor extends AppCompatActivity {
     private void setup(){
         btnVolverP = findViewById(R.id.btnVolverP);
         listaHistorialP = findViewById(R.id.listaHistorialP);
-        txtFecha = findViewById(R.id.txtFecha);
-        txtR1 = findViewById(R.id.txtR1);
-        txtR2 = findViewById(R.id.txtR2);
-        txtR3 = findViewById(R.id.txtR3);
-        txtR4 = findViewById(R.id.txtR4);
-        txtR5 = findViewById(R.id.txtR5);
-        txtREstado = findViewById(R.id.txtREstado);
     }
 
     @Override
@@ -67,8 +51,7 @@ public class HistorialProfesor extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ObtenerReportes>> call, Throwable t) {
-                Toast.makeText(HistorialProfesor.this,
-                        "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HistorialProfesor.this,"Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -76,16 +59,6 @@ public class HistorialProfesor extends AppCompatActivity {
     private void cargarLista(List<ObtenerReportes> reportes) {
         HistorialAdapter adapter = new HistorialAdapter(HistorialProfesor.this, reportes);
         listaHistorialP.setAdapter(adapter);
-
-        //PORBAR CAMBIAR LO QUE SE MUESTRA//
-
-        /*txtFecha.setText(String.valueOf(reportes));
-        txtR1.setText(String.valueOf(reportes));
-        txtR2.setText(String.valueOf(reportes));
-        txtR3.setText(String.valueOf(reportes));
-        txtR4.setText(String.valueOf(reportes));
-        txtR5.setText(String.valueOf(reportes));
-        txtREstado.setText(String.valueOf(reportes));*/
     }
 
     public void btnVolverP(View view) {

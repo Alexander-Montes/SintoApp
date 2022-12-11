@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerCursos;
 import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerDocente;
 import co.edu.unab.misiontic2022.sintoapp.entity.Token;
 import co.edu.unab.misiontic2022.sintoapp.network.APICliente;
@@ -63,7 +62,7 @@ public class ModuloProfesor extends AppCompatActivity {
     }
 
     public void btnCursos(View view){
-        Intent intent = new Intent(ModuloProfesor.this, ListaEstudiantes.class);
+        Intent intent = new Intent(ModuloProfesor.this, CursosAsignados.class);
         intent.putExtra("usuario_id", user_id);
         startActivity(intent);
     }
@@ -80,8 +79,7 @@ public class ModuloProfesor extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ObtenerDocente> call, Throwable t) {
-                Toast.makeText(ModuloProfesor.this,
-                        "Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ModuloProfesor.this,"Error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
