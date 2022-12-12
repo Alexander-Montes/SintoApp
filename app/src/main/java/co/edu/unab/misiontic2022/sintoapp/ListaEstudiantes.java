@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
+import co.edu.unab.misiontic2022.sintoapp.adapters.ListaAdapter;
 import co.edu.unab.misiontic2022.sintoapp.entity.ObtenerLista;
 import co.edu.unab.misiontic2022.sintoapp.entity.Token;
 import co.edu.unab.misiontic2022.sintoapp.network.APICliente;
@@ -41,9 +41,10 @@ import retrofit2.Response;
         listaEstudiantes = findViewById(R.id.listaEstudiantes);
     }
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
+        //NO ENTENDI COMO TRAER LOS ESTUDIANTES POR ID DE PROFESOR Y ID DE CURSO
         service.obtenerLista("Bearer "+ Token.token, user_id, curso_id).enqueue(new Callback<List<ObtenerLista>>() {
             @Override
             public void onResponse(Call<List<ObtenerLista>> call, Response<List<ObtenerLista>> response) {
@@ -59,9 +60,9 @@ import retrofit2.Response;
     }
 
     private void cargarLista(List<ObtenerLista> obLista){
-        ArrayAdapter adapter = new ArrayAdapter(ListaEstudiantes.this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, obLista);
+        ListaAdapter adapter = new ListaAdapter(ListaEstudiantes.this, obLista);
         listaEstudiantes.setAdapter(adapter);
-    }
+    }*/
 
     public void btnVolverLista(View view) {
         onBackPressed();
